@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>俄罗斯方块</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <h1 class="title">TETRIS</h1>
+      <div class="scores">
+        <div class="score-card">
+          <span class="score-label">分数</span>
+          <span class="score-value" id="score">0</span>
+        </div>
+        <div class="score-card best">
+          <span class="score-label">最高分</span>
+          <span class="score-value" id="best">0</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="stage">
+      <canvas id="board" width="300" height="600"></canvas>
+      <div class="overlay" id="overlay">
+        <div class="overlay-inner">
+          <h2 id="overlayTitle">俄罗斯方块</h2>
+          <p id="overlayText">键盘方向键操作 / 空格硬降<br/>移动端使用下方按钮</p>
+          <button class="btn primary" id="overlayBtn">开始游戏</button>
+        </div>
+      </div>
+    </main>
+
+    <div class="controls">
+      <button class="btn" id="startBtn">开始</button>
+      <button class="btn" id="pauseBtn">暂停</button>
+      <button class="btn" id="restartBtn">重开</button>
+    </div>
+
+    <div class="touchpad">
+      <button class="tbtn" data-act="left">◀</button>
+      <button class="tbtn" data-act="rotate">⟳</button>
+      <button class="tbtn" data-act="right">▶</button>
+      <button class="tbtn" data-act="down">▼</button>
+      <button class="tbtn wide" data-act="drop">硬降 ⤓</button>
+    </div>
+
+    <footer class="tips">← → 移动 · ↑ 旋转 · ↓ 软降 · 空格 硬降</footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
